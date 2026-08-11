@@ -1,6 +1,16 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function Footer() {
   return (
-    <footer className="hero-bg w-full rounded-t-[44px] max-w-[1440px] mx-auto px-margin-desktop py-32 flex flex-col items-center gap-12 border-t border-l border-r border-white/10">
+    <motion.footer
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      className="hero-bg w-full rounded-t-[44px] max-w-[1440px] mx-auto px-margin-desktop py-32 flex flex-col items-center gap-12 border-t border-l border-r border-white/10"
+    >
       <div className="font-headline-xl text-headline-xl font-black text-on-surface tracking-tight">
         Nitish Karthick V
       </div>
@@ -18,6 +28,6 @@ export default function Footer() {
         <p className="font-body-md text-body-md text-on-surface-variant mb-4">Built with Next.js, React, and Tailwind CSS.</p>
         <p className="font-body-md text-body-md text-outline">© 2026 Nitish Karthick V. All rights reserved.</p>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

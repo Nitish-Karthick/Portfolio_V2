@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 @config "../tailwind.config.ts";
 
 .hero-bg {
@@ -16,8 +17,8 @@
 }
 
 body {
-  background-color: #101415;
-  color: #e0e3e5;
+  background-color: #09090B;
+  color: #FAFAFA;
 }
 
 /* Custom Scrollbar */

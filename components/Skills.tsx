@@ -1,11 +1,20 @@
+"use client";
+
 import { skills } from "@/lib/data";
+import { motion } from "framer-motion";
 
 export default function Skills() {
   return (
-    <section id="skills" className="max-w-[1440px] mx-auto px-margin-desktop mb-40">
+    <section id="skills" className="max-w-[1440px] mx-auto px-margin-desktop mb-40 overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Light Card */}
-        <div className="bg-surface-container-high rounded-[44px] p-16 flex flex-col justify-between border border-white/10 min-h-[560px]">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          className="bg-surface-container-high rounded-[44px] p-16 flex flex-col justify-between border border-white/10 min-h-[560px]"
+        >
           <div>
             <h3 className="font-display-xl text-headline-xl font-bold text-on-surface mb-6 tracking-tighter">Languages & Tools</h3>
             <p className="font-body-lg text-body-lg text-on-surface-variant mb-12">
@@ -22,10 +31,16 @@ export default function Skills() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
         
         {/* Dark Card */}
-        <div className="hero-bg rounded-[44px] p-16 flex flex-col justify-between border border-white/10 min-h-[560px]">
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ type: "spring", stiffness: 300, damping: 30, delay: 0.1 }}
+          className="hero-bg rounded-[44px] p-16 flex flex-col justify-between border border-white/10 min-h-[560px]"
+        >
           <div>
             <h3 className="font-display-xl text-headline-xl font-bold text-on-surface mb-6 tracking-tighter">Frameworks</h3>
             <p className="font-body-lg text-body-lg text-on-surface-variant mb-12">
@@ -42,7 +57,7 @@ export default function Skills() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
